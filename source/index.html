@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello World!</title>
+    <title>Hue</title>
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
+
+    <script>
+
+      var nw =  require('nw.gui'),
+          win = nw.Window.get();
+          
+          win.isMaximized = false;
+    
+    </script>
+
   </head>
   <body>
     <header>
       <ul>
-        <li class="close">Close</li>
-        <li class="minimise">Minimise</li>
-        <li class="expand">Expand</li>
+        <li class="close" id="window-close">Close</li>
+        <li class="minimise" id="window-min">Minimise</li>
+        <li class="expand" id="window-expand">Expand</li>
       </ul>
     </header>
     <nav>
@@ -18,5 +28,34 @@
     <section>
       
     </section>
+
+
+    <script>
+
+      document.getElementById('window-min').onclick = function() {
+        win.minimize();
+      };
+
+      document.getElementById('window-close').onclick = function() {
+        win.close();
+      };
+
+      document.getElementById('window-expand').onclick = function() {
+        if(win.isMaximized) {
+          win.unmaximize();
+        } else {
+          win.maximize();
+        }
+      };
+
+      win.on('maximize', function() {
+        win.isMaximized = true;
+      });
+
+      win.on('unmaximize', function() {
+        win.isMaximized = false;
+      });
+
+    </script>
   </body>
 </html>
