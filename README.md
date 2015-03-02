@@ -66,6 +66,7 @@ Build websites faster and easier with this automated preprocessor app
   + TFS
   + Github
   + Done is done review - if it meets criteria then allow commit
++ Read/Write permission updater
 + Testing
   + JS Testing
   + Automated CSS Regression Testing
