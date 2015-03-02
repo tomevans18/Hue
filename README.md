@@ -8,7 +8,7 @@ Build websites faster and easier with this automated preprocessor app
   + Less
   + Stylus
   + Autoprefixer 
-  + Auto @import inside file
+  + Auto create/update @import file
   + Minify CSS
   + CSS Hint
   + LessCSS
