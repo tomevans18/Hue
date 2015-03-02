@@ -31,6 +31,23 @@ Build websites faster and easier with this automated preprocessor app
   + File path relative to proccessed file
   + relative to source file
 + Templating
+  + dust
+  + eco
+  + ejs
+  + haml
+  + haml-coffee
+  + handlebars
+  + hogan
+  + jade
+  + jazz
+  + jqtpl
+  + liquor
+  + mustache
+  + QEJS
+  + swig
+  + underscore
+  + walrus
+  + whiskers
 + Event based file watcher
 + HTML file extension
 + Livereload
