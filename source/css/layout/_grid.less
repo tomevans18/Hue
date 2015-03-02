@@ -1,0 +1,47 @@
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+@total-width: 1280px;
+
+@breakpoint-desktop: 1230px;
+@breakpoint-tablet-wide: 1024px;
+@breakpoint-tablet: 960px;
+@breakpoint-mobile: 768px;
+
+@desktop: ~"only screen and (min-width: 1024px)";
+@tablet-wide: ~"only screen and (min-width: 960px)";
+@tablet: ~"only screen and (min-width: 768px)";
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+body {
+	width: 100%;
+	.clearfix;
+}
+.wrapper {
+	max-width: @total-width;
+	padding: 0 50px;
+	margin: 0 auto;
+	.clearfix();
+}
+
+.row(@columns:@columns) {
+	display: block;
+	width: 100%*((@gutter-width + @gridsystem-width)/@gridsystem-width);
+	margin: 0 100%*(((@gutter-width*.5)/@gridsystem-width)*-1);
+	.clearfix;
+}
+.column(@x,@columns:@columns) {
+	display: inline;
+	float: left;
+	width: 100%*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+	margin: 0 100%*((@gutter-width*.5)/@gridsystem-width);
+}
+.push(@offset:1) {
+	margin-left: 100%*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + 100%*((@gutter-width*.5)/@gridsystem-width);
+}
+.pull(@offset:1) {
+	margin-right: 100%*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + 100%*((@gutter-width*.5)/@gridsystem-width);
+}

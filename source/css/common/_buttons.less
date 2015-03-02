@@ -1,12 +1,24 @@
-button {
-  text-transform: uppercase;
-  background: @btn-bg;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 10px;
-  outline: none;
-  &:first-of-type {
-    margin-top: 30px;
-  }
+.btn, button {
+	border: none;
+	padding: 18px 28px;
+	background: @green;
+	border: 2px solid @green;
+	color: @white;
+	text-transform: uppercase;
+	font-family: @font-family;
+	font-weight: bold;
+	.font-size(25);
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	margin: 10px 0;
+	cursor: pointer;
+	.transition();
+	outline: none;
+	&:hover {
+		text-decoration: underline;
+	}
+	&:focus {
+		border: 2px solid darken(@green, 25%);
+	}
 }

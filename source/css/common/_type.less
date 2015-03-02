@@ -1,0 +1,118 @@
+// Type Variables
+// -------------------------------------//
+@font-family: 'Bryant', "Trebuchet MS", Helvetica, sans-serif;
+@base-font-size: 22;
+
+@body-font-weight: normal;
+@body-font-color: @copy-color;
+
+@head-font-weight: 900;
+@head-font-color: @header-color;
+
+// em of base font size
+@h1: 2;
+@h2: 1.8;
+@h3: 1.6;
+@h4: 1.5;
+@h5: 1.45;
+@h6: 1.4;
+
+// p
+@word-wrap: normal;
+@paragraph-indent: false;
+@p-indent-val: 10em;
+@p-bottom-margin: ~"@{base-font-size}px";
+
+// Type Mixins
+// -------------------------------------//
+.font-size(@targetPixels) {
+	@remValue: (@targetPixels / @base-font-size);
+	@pxValue: @targetPixels;
+	font-size: ~"@{pxValue}px"; 
+	font-size: ~"@{remValue}rem";
+}
+
+.line-height(@targetPixels) {
+	@remValue: (@targetPixels / @base-font-size);
+	@pxValue: @targetPixels;
+	line-height: ~"@{pxValue}px"; 
+	line-height: ~"@{remValue}rem";
+}
+
+
+// Global Styles
+// -------------------------------------//
+html {
+	font-family: @font-family;
+	font-weight: @body-font-weight;
+	font-size: ~"@{base-font-size}px";
+	line-height: 1.33;
+}
+
+body {
+	color: @body-font-color;
+	word-wrap: @word-wrap;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+.t-center {
+	text-align: center;
+}
+
+.t-left {
+	text-align: left
+}
+
+.t-right {
+	text-align: right;
+}
+
+a {
+	color: @d-blue;
+	font-weight: bold;
+	outline: none;
+	.transition();
+	&:hover, &:focus {
+		color: @copy-color;
+	}
+}
+
+// Headers
+// -------------------------------------//
+.h(@var) {
+	@head: 'h@{var}'
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: @head-font-color;
+  line-height: 1;
+  margin-top: 0;
+  font-weight: @head-font-weight;
+}
+
+.headers(@i: 6) when (@i > 0) {
+	.h(@i) ;
+	h@{i} {
+		.font-size(@@head * @base-font-size);
+		.line-height(@@head * @base-font-size);
+	}
+	.headers((@i - 1));
+	} .headers;
+
+
+// P
+// -------------------------------------//
+p {
+	margin: auto auto @p-bottom-margin;
+	& + p when (@paragraph-indent = true) {
+		text-indent: @p-indent-val;
+		margin-top: -@p-indent-val;
+	}
+}

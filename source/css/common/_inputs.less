@@ -1,0 +1,44 @@
+input, select {
+	padding: 20px;
+	height: 61px;
+	border: none;
+	width: 100%;
+	background: @grey;
+	color: @grey-copy-color;
+	.font-size(18);
+	.transition();
+	&:focus { 
+		background: @white;
+		color: @copy-color;
+		outline: none;
+	}
+}
+
+input[type=number] {
+	width: 110px;
+	margin-right: 5px;
+	padding: 5px 5px 5px 15px;
+}
+
+.checklist li {
+	padding-left: 40px;
+}
+
+input[type=checkbox] {
+	display: inline;
+	position: absolute;
+	left: 0;
+	top: 5px;
+	cursor: pointer;
+	height: auto;
+	width: auto;
+	& + label {
+		position: relative;
+		display: inline;
+		padding-bottom: 20px;
+		cursor: pointer;
+	}
+	&:focus {
+		outline: 2px solid green;
+	}
+}
