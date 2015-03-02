@@ -1,9 +1,27 @@
 {
   "name": "Hue",
   "main": "index.html",
+  "version": "0.1.0",
   "window": {
-    "toolbar":  false,
-    "frame":    false,
-    "transparent": true
-  }
+    "title": "Hue",
+    "icon": "icon.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 450,
+    "height": 625,
+    "min_width": 450,
+    "min_height": 625,
+    "position": "center",
+    "resizable": true
+  },
+  "webkit": {
+    "plugin": false,
+    "java": false,
+    "page-cache": false
+  },
+  "maintainers": [{
+    "name": "Tom Evans",
+    "email": "tom@tomevans.eu",
+    "web": "http://tomevans.eu"
+  }]
 }

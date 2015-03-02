@@ -1,0 +1,104 @@
+body, html {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	background: #4a5c66;
+}
+header {
+	-webkit-app-region: drag;
+	-webkit-user-select: none;  
+	background: #b4b4b4;
+	opacity: 0.9;
+	width: 100%;
+	padding: 10px;
+	background: #273138;
+	cursor: default;
+	ul {
+		margin: 0;
+		padding: 0;
+		width: 65px;
+		height: 14px;
+		li {
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			background: #4a5c66;
+			border-radius: 50%;
+			margin: 0 4px 0 0;
+			text-indent: -9999px;
+			position: relative;
+			-webkit-app-region: no-drag;
+			-webkit-transition: all ease-out 0.15s;
+			&:after, &:before {
+				opacity: 0;
+			}
+			&.close {        
+				&:before, &:after {
+					content: '';
+					position: absolute;
+					top: 6px;
+					left: 2px;
+					width: 10px;
+					height: 2px;
+					background: #800200;
+				}
+				&:before {
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+				&:after {
+					-webkit-transform: rotate(-45deg);
+					transform: rotate(-45deg);
+				}
+			}
+			&.minimise {
+				&:before {
+					content: '';
+					position: absolute;
+					top: 6px;
+					left: 2px;
+					width: 10px;
+					height: 2px;
+					background: #995701;
+				}
+			}
+			&.expand {
+				&:before, &:after {
+					content: '';
+					position: absolute;
+					top: 6px;
+					left: 2px;
+					width: 10px;
+					height: 2px;
+					background: #076300;          
+				}
+				&:after {
+					-webkit-transform: rotate(90deg);
+					transform: rotate(90deg);
+				}
+			}
+			&:hover {
+				&:after, &:before {
+					opacity: 1;
+				}
+				&.close {
+					background: #FF6057;
+				}
+				&.minimise {
+					background: #FFBD2E;
+				}
+				&.expand {
+					background: #27C93F;
+				}
+			}
+		}
+	}
+}
