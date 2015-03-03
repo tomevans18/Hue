@@ -88,3 +88,24 @@ Build websites faster and easier with this automated preprocessor app
 + Igonre files from compile / preprocessor / comitment
 + Logs
 + Light / dark theme
+
+## Framework folder structure
+
++ settings
+	+ global variables - file for each section
+	+ colors
++ tools
+	+ mixins - file for each mixin
++ fonts
++ framework
+	+ reset
+	+ grid
+	+ type
++ modules 
+	+ buttons
+	+ lists
++ Theme
+	+ header
+	+ nav
+	+ main
+	+ footer
